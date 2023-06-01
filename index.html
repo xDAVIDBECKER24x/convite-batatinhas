@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            margin: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        #evil-button {
+            position: absolute;
+            white-space: nowrap;
+            font-size: 2rem;
+        }
+        
+        .button-container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .btn {
+            font-size: 30px;
+            margin: 15px;
+            padding: 10px 20px;
+            color: white;
+            border-radius: 10px;
+            border-color: transparent;
+            cursor: pointer;
+            transition: background-color 0.5s ease-in-out;
+        }
+        
+        .btn-cancel {
+            background-color: rgba(235, 38, 50, 0.6);
+        }
+        
+        .btn-cancel:hover {
+            background-color: rgb(235, 38, 50)
+        }
+        
+        .btn-accept {
+            background-color: rgba(66, 184, 131, 0.6);
+        }
+        
+        .btn-accept:hover {
+            background-color: rgb(66, 184, 131);
+        }
+        
+        .come-back-popup,
+        .thanks-popup {
+            position: absolute;
+            padding: 20px 30px;
+            border: 5px solid #333;
+            border-radius: 10px;
+            font-size: 28px;
+            right: -300px;
+        }
+        
+        .come-back-popup {
+            top: 10px;
+        }
+        
+        .thanks-popup {
+            bottom: 10px;
+        }
+        
+        .animate-popup {
+            animation: 10s slide;
+        }
+        
+        @keyframes slide {
+            0% {
+                right: -300px
+            }
+            10% {
+                right: 10px;
+            }
+            90% {
+                right: 10px;
+            }
+            100% {
+                right: -300px;
+            }
+        }
+        
+        .flex-parent {
+            display: flex;
+        }
+        
+        .jc-center {
+            justify-content: center;
+        }
+        
+        button.margin-right {
+            margin-right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="flex-parent jc-center">
+        <button class='btn btn-accept' id="good-button">Sim :)</button>
+
+        <button class='btn btn-cancel' id="evil-button">Não :(</button>
+    </div>
+
+    <div class='thanks-popup'>
+        <span>AEEE!! :D</span>
+    </div>
+
+
+</body>
+
+</html>
+<script>
+    const thanks = document.querySelector('.thanks-popup');
+    const comeBack = document.querySelector('.come-back-popup');
+    const acceptButton = document.querySelector('.btn-accept');
+    const cancelButton = document.querySelector('.btn-cancel');
+
+    cancelButton.addEventListener('click', () => {
+        comeBack.classList.add('animate-popup');
+        setTimeout(() => comeBack.classList.remove('animate-popup'), 10000);
+    });
+
+    acceptButton.addEventListener('click', () => {
+        thanks.classList.add('animate-popup');
+        setTimeout(() => thanks.classList.remove('animate-popup'), 10000);
+    });
+
+    cancelButton.addEventListener('touchstart', () => {
+        comeBack.classList.add('animate-popup');
+        setTimeout(() => comeBack.classList.remove('animate-popup'), 10000);
+    });
+
+    acceptButton.addEventListener('touchstart', () => {
+        thanks.classList.add('animate-popup');
+        setTimeout(() => thanks.classList.remove('animate-popup'), 10000);
+    });
