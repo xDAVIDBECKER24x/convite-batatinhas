@@ -150,9 +150,6 @@
     </div>
     <div id="conteudo-container" hidden class="conteudo">
         <center>
-
-
-
             <div id="conteudo-container" class="text-container">
                 <div class="centered-element">
                     <img style="height: 300px" src="gatinho.png" />
@@ -160,7 +157,7 @@
                 </div>
             </div>
             <div id="conteudo-container" style="margin-left: -200px">
-                <div class="button-container">
+                <div class="pulse-button button-container">
                     <button class="btn btn-accept" id="good-button">Sim :)</button>
                 </div>
                 <div class="button-container">
@@ -397,7 +394,7 @@
         document.getElementById("convite-container").style.visibility = "hidden";
         $(".card").hide();
         $("#conteudo-container").show("slow");
-
+        $("#good-button").pulsate()
     }
     const thanks = document.querySelector(".thanks-popup");
     const acceptButton = document.querySelector(".btn-accept");
