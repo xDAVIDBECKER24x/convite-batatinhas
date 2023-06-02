@@ -175,13 +175,8 @@
         <div class="centered-element">
             <div class="card">
                 <button class="btn btn-cancel" style="margin-left:-50px;margin-top:-30px" id="convite-container" onclick="abrirConvite()">Abrir</button>
-                <!-- <button class="btn btn-danger btn-heart" style="margin-left:-20px" id="convite-container" onclick="abrirConvite()">Abrir</button> -->
-
+                <audio id="sound1" src="musica.mp3" preload="auto"></audio>
             </div>
-            <audio id="sound1" src="musica.mp3" preload="auto"></audio>
-
-
-            <!-- <div class="heart"></div> -->
         </div>
     </div>
     </div>
@@ -431,6 +426,8 @@
     function abrirConvite() {
         document.getElementById("sound1").play();
         document.getElementById("convite-container").style.visibility = "hidden";
+
+
 
         $("#conteudo-container").show("slow");
     }
