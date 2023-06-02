@@ -2,12 +2,17 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <script defer src="script.js"></script>
     <style>
+        @font-face {
+            font-family: "Angel";
+            src: url("assets/angel.otf") format("otf"), url("assets/angel.ttf") format("truetype");
+        }
+        
         body {
             margin: 0;
             width: 100vw;
@@ -34,6 +39,21 @@
             align-items: center;
         }
         
+        .text-container {
+            position: relative;
+            height: 400px;
+            color: #333;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        
+        .centered-element {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
         .btn {
             font-size: 30px;
             margin: 15px;
@@ -50,7 +70,7 @@
         }
         
         .btn-cancel:hover {
-            background-color: rgb(235, 38, 50)
+            background-color: rgb(235, 38, 50);
         }
         
         .btn-accept {
@@ -85,7 +105,7 @@
         
         @keyframes slide {
             0% {
-                right: -300px
+                right: -300px;
             }
             10% {
                 right: 10px;
@@ -101,50 +121,60 @@
 </head>
 
 <body>
-
     <center>
-        <div style="height: 400px;">
-
+        <div class="text-container">
+            <div class="centered-element">
+                <img style="height: 300px" src="gatinho.png" />
+                <h1>Batatinhas hoje ??? O.O</h1>
+            </div>
         </div>
-        <div class="button-container">
-            <button class='btn btn-accept' id="good-button">Sim :)</button>
-        </div>
-        <div class="button-container">
-            <button class='btn btn-cancel' id="evil-button">Não :(</button>
+        <div style="margin-left: -200px">
+            <div class="button-container">
+                <button class="btn btn-accept" id="good-button">Sim :)</button>
+            </div>
+            <div class="button-container">
+                <button class="btn btn-cancel" id="evil-button">Não :(</button>
+            </div>
         </div>
     </center>
 
-
-    <div class='thanks-popup'>
+    <div class="thanks-popup">
         <span>AEEE!!! :D</span>
     </div>
 
-
+    <audio src="https://www.bensound.com/bensound-music/bensound-moose.mp3"></audio>
 </body>
 
 </html>
 <script>
-    const thanks = document.querySelector('.thanks-popup');
-    const comeBack = document.querySelector('.come-back-popup');
-    const acceptButton = document.querySelector('.btn-accept');
-    const cancelButton = document.querySelector('.btn-cancel');
-
-    cancelButton.addEventListener('click', () => {
-        comeBack.classList.add('animate-popup');
-        setTimeout(() => comeBack.classList.remove('animate-popup'), 10000);
+    window.addEventListener("DOMContentLoaded", (event) => {
+        const audio = document.querySelector("audio");
+        audio.volume = 0.2;
+        audio.play();
     });
 
-    acceptButton.addEventListener('click', () => {
-        thanks.classList.add('animate-popup');
-        setTimeout(() => thanks.classList.remove('animate-popup'), 10000);
+    const thanks = document.querySelector(".thanks-popup");
+    const comeBack = document.querySelector(".come-back-popup");
+    const acceptButton = document.querySelector(".btn-accept");
+    const cancelButton = document.querySelector(".btn-cancel");
+
+    cancelButton.addEventListener("click", () => {
+        comeBack.classList.add("animate-popup");
+        setTimeout(() => comeBack.classList.remove("animate-popup"), 10000);
     });
 
-    cancelButton.addEventListener('touchstart', () => {
-        comeBack.classList.add('animate-popup');
-        setTimeout(() => comeBack.classList.remove('animate-popup'), 10000);
+    acceptButton.addEventListener("click", () => {
+        thanks.classList.add("animate-popup");
+        setTimeout(() => thanks.classList.remove("animate-popup"), 10000);
     });
 
-    acceptButton.addEventListener('touchstart', () => {
-        thanks.classList.add('animate-popup');
-        setTimeout(() => thanks.classList.remove('animate-popup'), 10000);
+    cancelButton.addEventListener("touchstart", () => {
+        comeBack.classList.add("animate-popup");
+        setTimeout(() => comeBack.classList.remove("animate-popup"), 10000);
     });
+
+    acceptButton.addEventListener("touchstart", () => {
+        thanks.classList.add("animate-popup");
+        setTimeout(() => thanks.classList.remove("animate-popup"), 10000);
+    });
+</script>
