@@ -21,6 +21,7 @@
             width: 100vw;
             height: 100vh;
             overflow: hidden;
+            background-color: #fff6d5;
         }
         
         #goog-button {
@@ -127,6 +128,27 @@
             }
         }
         
+        .blob {
+            box-shadow: 0 0 0 0 rgba(66, 184, 131, 0.6);
+            transform: scale(1);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(66, 184, 131, 0.6);
+            }
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 10px rgba(66, 184, 131, 0.6);
+            }
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(66, 184, 131, 0.6);
+            }
+        }
+        
         .card {
             width: 0;
             height: 0;
@@ -158,7 +180,7 @@
             </div>
             <div id="conteudo-container" style="margin-left: -200px">
                 <div class="pulse-button button-container">
-                    <button class="btn btn-accept" id="good-button">Sim :)</button>
+                    <button class="blob btn btn-accept" id="good-button">Sim :)</button>
                 </div>
                 <div class="button-container">
                     <button class="btn btn-cancel" id="evil-button">Não :(</button>
@@ -166,9 +188,9 @@
             </div>
             <br />
             <br /><br />
-            <div class='thanks-popup'>
+            <!-- <div class='thanks-popup'>
                 <span>AEEEW :D</span>
-            </div>
+            </div> -->
         </center>
         <div>
             <marquee behavior="scroll" direction="down" scrollamount="4" scrolldelay="6" height="693" style="
