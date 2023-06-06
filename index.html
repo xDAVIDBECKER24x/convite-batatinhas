@@ -2,435 +2,502 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
-    <script defer src="script.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)</title>
+  <script defer src="script.js"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
-    <style>
-        @font-face {
-            font-family: "Angel";
-            src: url("assets/angel.otf") format("otf"), url("assets/angel.ttf") format("truetype");
-        }
-        
-        body {
-            margin: 0;
-            width: 100vw;
-            height: 100vh;
-            overflow: hidden;
-            background-color: #fff6d5;
-        }
-        
-        #goog-button {
-            position: relative;
-            margin-inline-start: -300px;
-        }
-        
-        #evil-button {
-            position: absolute;
-            white-space: nowrap;
-            font-size: 2rem;
-        }
-        
-        .convite-container {
-            display: inline;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .button-container {
-            width: 100%;
-            height: 100vh;
-            display: inline;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .text-container {
-            position: relative;
-            height: 400px;
-            color: #333;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-        }
-        
-        .centered-element {
-            margin: 0;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-        
-        .btn {
-            font-size: 30px;
-            margin: 15px;
-            padding: 10px 20px;
-            color: white;
-            border-radius: 10px;
-            border-color: transparent;
-            cursor: pointer;
-            transition: background-color 0.5s ease-in-out;
-        }
-        
-        .btn-cancel {
-            background-color: rgba(235, 38, 50, 0.6);
-        }
-        
-        .btn-cancel:hover {
-            background-color: rgb(235, 38, 50);
-        }
-        
-        .btn-accept {
-            background-color: rgba(66, 184, 131, 0.6);
-        }
-        
-        .btn-accept:hover {
-            background-color: rgb(66, 184, 131);
-        }
-        
-        .come-back-popup,
-        .thanks-popup {
-            position: absolute;
-            padding: 20px 30px;
-            border: 5px solid #333;
-            border-radius: 10px;
-            font-size: 28px;
-            right: -300px;
-        }
-        
-        .come-back-popup {
-            top: 10px;
-        }
-        
-        .thanks-popup {
-            bottom: 10px;
-        }
-        
-        .animate-popup {
-            animation: 10s slide;
-        }
-        
-        @keyframes slide {
-            0% {
-                right: -300px;
-            }
-            10% {
-                right: 10px;
-            }
-            90% {
-                right: 10px;
-            }
-            100% {
-                right: -300px;
-            }
-        }
-        
-        .blob {
-            box-shadow: 0 0 0 0 rgba(66, 184, 131, 0.6);
-            transform: scale(1);
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% {
-                transform: scale(0.95);
-                box-shadow: 0 0 0 0 rgba(66, 184, 131, 0.6);
-            }
-            70% {
-                transform: scale(1);
-                box-shadow: 0 0 0 10px rgba(66, 184, 131, 0.6);
-            }
-            100% {
-                transform: scale(0.95);
-                box-shadow: 0 0 0 0 rgba(66, 184, 131, 0.6);
-            }
-        }
-        
-        .card {
-            width: 0;
-            height: 0;
-            border-top: 100px solid #eee;
-            border-right: 170px solid #ddd;
-            border-bottom: 100px solid #ccc;
-            border-left: 170px solid #ccc;
-        }
-    </style>
+  <style>
+    @font-face {
+      font-family: "Angel";
+      src: url("assets/angel.otf") format("otf"), url("assets/angel.ttf") format("truetype");
+    }
+
+    body {
+      margin: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #fff6d5;
+    }
+
+    #good-button {
+     
+  
+    }
+
+    #evil-button {
+      position: absolute;
+      white-space: nowrap;
+      font-size: 2rem;
+    }
+
+    .convite-container {
+      display: inline;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .button-container {
+      width: 100%;
+      height: 100vh;
+      display: inline;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .text-container {
+      position: relative;
+      height: 400px;
+      color: #333;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .centered-element {
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .btn {
+      font-size: 30px;
+      margin: 15px;
+      padding: 10px 20px;
+      color: white;
+      border-radius: 10px;
+      border: 0;
+      border-color: transparent;
+      cursor: pointer;
+      transition: background-color 0.5s ease-in-out;
+    }
+
+    .btn-cancel {
+      background-color: rgba(235, 38, 50, 0.6);
+    }
+
+    .btn-cancel:hover {
+      background-color: rgb(235, 38, 50);
+    }
+
+    .btn-accept {
+      background-color: rgba(66, 184, 131, 0.6);
+    }
+
+    .btn-accept:hover {
+      background-color: rgb(66, 184, 131);
+    }
+
+    .come-back-popup,
+    .thanks-popup {
+      position: absolute;
+      padding: 20px 30px;
+      border: 5px solid #333;
+      border-radius: 10px;
+      font-size: 28px;
+      right: -300px;
+    }
+
+    .come-back-popup {
+      top: 10px;
+    }
+
+    .thanks-popup {
+      bottom: 10px;
+    }
+
+    .animate-popup {
+      animation: 10s slide;
+    }
+
+    @keyframes slide {
+      0% {
+        right: -300px;
+      }
+
+      10% {
+        right: 10px;
+      }
+
+      90% {
+        right: 10px;
+      }
+
+      100% {
+        right: -300px;
+      }
+    }
+
+    .blob {
+      box-shadow: 0 0 0 0 rgba(66, 184, 131, 0.6);
+      transform: scale(1);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(66, 184, 131, 0.6);
+      }
+
+      70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(66, 184, 131, 0.6);
+      }
+
+      100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(66, 184, 131, 0.6);
+      }
+    }
+
+    @keyframes jump-shaking {
+      0% {
+        transform: translateX(0)
+      }
+
+      25% {
+        transform: translateY(-5px)
+      }
+
+      35% {
+        transform: translateY(-5px) rotate(8deg)
+      }
+
+      55% {
+        transform: translateY(-5px) rotate(-8deg)
+      }
+
+      65% {
+        transform: translateY(-5px) rotate(8deg)
+      }
+
+      75% {
+        transform: translateY(-5px) rotate(-8deg)
+      }
+
+      100% {
+        transform: translateY(0) rotate(0)
+      }
+    }
+
+    @keyframes tilt-shaking {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      25% {
+        transform: rotate(5deg);
+      }
+
+      50% {
+        transform: rotate(0eg);
+      }
+
+      75% {
+        transform: rotate(-5deg);
+      }
+
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+
+    .constant-tilt-shake {
+      animation: tilt-shaking 2.0s infinite;
+    }
+
+    .rise-shake {
+      animation: jump-shaking 1.83s infinite;
+    }
+
+    .card {
+      width: 0;
+      height: 0;
+      border-top: 100px solid #eee;
+      border-right: 170px solid #ddd;
+      border-bottom: 100px solid #ccc;
+      border-left: 170px solid #ccc;
+    }
+  </style>
 </head>
 
 <body>
-    <div class="convite-container">
+  <div class="convite-container">
+    <div class="centered-element">
+      <div class="constant-tilt-shake card">
+        <button class="btn btn-cancel" style="margin-left:-50px;margin-top:-30px" id="convite-container"
+          onclick="abrirConvite()">Abrir</button>
+        <audio id="sound1" src="musica.mp3" preload="auto"></audio>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div id="conteudo-container" hidden class="conteudo">
+    <center>
+      <div id="conteudo-container" class="text-container">
         <div class="centered-element">
-            <div class="card">
-                <button class="btn btn-cancel" style="margin-left:-50px;margin-top:-30px" id="convite-container" onclick="abrirConvite()">Abrir</button>
-                <audio id="sound1" src="musica.mp3" preload="auto"></audio>
-            </div>
+          <img style="height: 300px" src="gatinho.png" />
+          <h1 class="rise-shake">Batatinhas hoje bb ??? <br>
+            <div style="color:rgb(255, 115, 138)">>////&lt </div>
+          </h1>
         </div>
-    </div>
-    </div>
-    <div id="conteudo-container" hidden class="conteudo">
-        <center>
-            <div id="conteudo-container" class="text-container">
-                <div class="centered-element">
-                    <img style="height: 300px" src="gatinho.png" />
-                    <h1>Batatinhas hoje ??? <br>>////&lt </h1>
-                </div>
-            </div>
-            <div id="conteudo-container" style="margin-left: -200px">
-                <div class="pulse-button button-container">
-                    <button class="blob btn btn-accept" id="good-button">Sim :)</button>
-                </div>
-                <div class="button-container">
-                    <button class="btn btn-cancel" id="evil-button">Não :(</button>
-                </div>
-            </div>
-            <br />
-            <br /><br />
-            <!-- <div class='thanks-popup'>
-                <span>AEEEW :D</span>
-            </div> -->
-        </center>
-        <div>
-            <marquee behavior="scroll" direction="down" scrollamount="4" scrolldelay="6" height="693" style="
+      </div>
+      <div id="conteudo-container" style="margin-left: -200px">
+        <div class="pulse-button button-container">
+          <button class="blob btn btn-accept" id="good-button">Sim :)</button>
+        </div>
+        <div class="button-container">
+          <button class="btn btn-cancel" id="evil-button">Não :(</button>
+        </div>
+      </div>
+      <br />
+      <br /><br />
+
+    </center>
+    <div>
+      <marquee behavior="scroll" direction="down" scrollamount="4" scrolldelay="6" height="693" style="
             position: absolute;
             left: 73%;
             top: 79px;
             width: 15;
             height: 693px;
           "><img src=http://dl4.glitter-graphics.net/pub/111/111944aomhvemlia.gif border=0></marquee>
-            <marquee behavior="scroll" direction="down" scrollamount="2" scrolldelay="26" height="619" style="
+      <marquee behavior="scroll" direction="down" scrollamount="2" scrolldelay="26" height="619" style="
             position: absolute;
             left: 30%;
             top: 65px;
             width: 15;
             height: 619px;
           "><img src=http://dl4.glitter-graphics.net/pub/111/111944aomhvemlia.gif border=0></marquee>
-            <marquee behavior="scroll" direction="down" scrollamount="2" scrolldelay="17" height="527" style="
+      <marquee behavior="scroll" direction="down" scrollamount="2" scrolldelay="17" height="527" style="
             position: absolute;
             left: 31%;
             top: 18px;
             width: 15;
             height: 527px;
           "><img src=http://dl4.glitter-graphics.net/pub/111/111944aomhvemlia.gif border=0></marquee>
-            <marquee behavior="scroll" direction="down" scrollamount="5" scrolldelay="11" height="544" style="
+      <marquee behavior="scroll" direction="down" scrollamount="5" scrolldelay="11" height="544" style="
             position: absolute;
             left: 68%;
             top: 103px;
             width: 15;
             height: 544px;
           "><img src=http://dl4.glitter-graphics.net/pub/111/111944aomhvemlia.gif border=0></marquee>
-            <marquee behavior="scroll" direction="down" scrollamount="5" scrolldelay="23" height="614" style="
+      <marquee behavior="scroll" direction="down" scrollamount="5" scrolldelay="23" height="614" style="
             position: absolute;
             left: 10%;
             top: 131px;
             width: 15;
             height: 614px;
           "><img src=http://dl4.glitter-graphics.net/pub/111/111944aomhvemlia.gif border=0></marquee>
-            <marquee behavior="scroll" direction="down" scrollamount="2" scrolldelay="12" height="581" style="
+      <marquee behavior="scroll" direction="down" scrollamount="2" scrolldelay="12" height="581" style="
             position: absolute;
             left: 59%;
             top: 174px;
             width: 15;
             height: 581px;
           "><img src=http://dl4.glitter-graphics.net/pub/111/111944aomhvemlia.gif border=0></marquee>
-            <marquee behavior="scroll" direction="down" scrollamount="1" scrolldelay="39" height="656" style="
+      <marquee behavior="scroll" direction="down" scrollamount="1" scrolldelay="39" height="656" style="
             position: absolute;
             left: 79%;
             top: 65px;
             width: 15;
             height: 656px;
           "><img src=http://dl4.glitter-graphics.net/pub/111/111944aomhvemlia.gif border=0></marquee>
-            <marquee behavior="scroll" direction="down" scrollamount="6" scrolldelay="38" height="664" style="
+      <marquee behavior="scroll" direction="down" scrollamount="6" scrolldelay="38" height="664" style="
             position: absolute;
             left: 57%;
             top: 80px;
             width: 15;
             height: 664px;
           "><img src=http://dl4.glitter-graphics.net/pub/111/111944aomhvemlia.gif border=0></marquee>
-            <marquee behavior="scroll" direction="down" scrollamount="5" scrolldelay="20" height="599" style="
+      <marquee behavior="scroll" direction="down" scrollamount="5" scrolldelay="20" height="599" style="
             position: absolute;
             left: 87%;
             top: 19px;
             width: 15;
             height: 599px;
           "><img src=http://dl4.glitter-graphics.net/pub/111/111944aomhvemlia.gif border=0></marquee>
-            <marquee behavior="scroll" direction="down" scrollamount="3" scrolldelay="41" height="512" style="
+      <marquee behavior="scroll" direction="down" scrollamount="3" scrolldelay="41" height="512" style="
             position: absolute;
             left: 75%;
             top: 72px;
             width: 15;
             height: 512px;
           "><img src=http://dl4.glitter-graphics.net/pub/111/111944aomhvemlia.gif border=0></marquee>
-            <marquee behavior="scroll" direction="down" scrollamount="1" scrolldelay="33" height="511" style="
+      <marquee behavior="scroll" direction="down" scrollamount="1" scrolldelay="33" height="511" style="
             position: absolute;
             left: 50%;
             top: 63px;
             width: 15;
             height: 511px;
           "><img src=http://dl4.glitter-graphics.net/pub/111/111944aomhvemlia.gif border=0></marquee>
-            <marquee behavior="scroll" direction="down" scrollamount="4" scrolldelay="45" height="675" style="
+      <marquee behavior="scroll" direction="down" scrollamount="4" scrolldelay="45" height="675" style="
             position: absolute;
             left: 74%;
             top: 192px;
             width: 15;
             height: 675px;
           "><img src=http://dl4.glitter-graphics.net/pub/111/111944aomhvemlia.gif border=0></marquee>
-            <marquee behavior="scroll" direction="down" scrollamount="2" scrolldelay="35" height="676" style="
+      <marquee behavior="scroll" direction="down" scrollamount="2" scrolldelay="35" height="676" style="
             position: absolute;
             left: 24%;
             top: 80px;
             width: 15;
             height: 676px;
           "><img src=http://dl4.glitter-graphics.net/pub/111/111944aomhvemlia.gif border=0></marquee>
-            <marquee behavior="scroll" direction="down" scrollamount="6" scrolldelay="24" height="693" style="
+      <marquee behavior="scroll" direction="down" scrollamount="6" scrolldelay="24" height="693" style="
             position: absolute;
             left: 44%;
             top: 139px;
             width: 15;
             height: 693px;
           "><img src=http://dl4.glitter-graphics.net/pub/111/111944aomhvemlia.gif border=0></marquee>
-            <marquee behavior="scroll" direction="down" scrollamount="4" scrolldelay="34" height="627" style="
+      <marquee behavior="scroll" direction="down" scrollamount="4" scrolldelay="34" height="627" style="
             position: absolute;
             left: 19%;
             top: 127px;
             width: 15;
             height: 627px;
           "><img src=http://dl4.glitter-graphics.net/pub/111/111944aomhvemlia.gif border=0></marquee>
-            <marquee behavior="scroll" direction="down" scrollamount="3" scrolldelay="17" height="639" style="
+      <marquee behavior="scroll" direction="down" scrollamount="3" scrolldelay="17" height="639" style="
             position: absolute;
             left: 90%;
             top: 12px;
             width: 15;
             height: 639px;
           "><img src=http://dl4.glitter-graphics.net/pub/111/111944aomhvemlia.gif border=0></marquee>
-            <marquee behavior="scroll" direction="down" scrollamount="1" scrolldelay="19" height="593" style="
+      <marquee behavior="scroll" direction="down" scrollamount="1" scrolldelay="19" height="593" style="
             position: absolute;
             left: 23%;
             top: 41px;
             width: 15;
             height: 593px;
           "><img src=http://dl4.glitter-graphics.net/pub/111/111944aomhvemlia.gif border=0></marquee>
-            <marquee behavior="scroll" direction="down" scrollamount="1" scrolldelay="24" height="533" style="
+      <marquee behavior="scroll" direction="down" scrollamount="1" scrolldelay="24" height="533" style="
             position: absolute;
             left: 42%;
             top: 91px;
             width: 15;
             height: 533px;
           "><img src=http://dl4.glitter-graphics.net/pub/111/111944aomhvemlia.gif border=0></marquee>
-            <marquee behavior="scroll" direction="down" scrollamount="3" scrolldelay="48" height="630" style="
+      <marquee behavior="scroll" direction="down" scrollamount="3" scrolldelay="48" height="630" style="
             position: absolute;
             left: 71%;
             top: 41px;
             width: 15;
             height: 630px;
           "><img src=http://dl4.glitter-graphics.net/pub/111/111944aomhvemlia.gif border=0></marquee>
-            <marquee behavior="scroll" direction="down" scrollamount="1" scrolldelay="30" height="502" style="
+      <marquee behavior="scroll" direction="down" scrollamount="1" scrolldelay="30" height="502" style="
             position: absolute;
             left: 20%;
             top: 137px;
             width: 15;
             height: 502px;
           "><img src=http://dl4.glitter-graphics.net/pub/111/111944aomhvemlia.gif border=0></marquee>
-            <marquee behavior="scroll" direction="down" scrollamount="5" scrolldelay="31" height="578" style="
+      <marquee behavior="scroll" direction="down" scrollamount="5" scrolldelay="31" height="578" style="
             position: absolute;
             left: 55%;
             top: 142px;
             width: 15;
             height: 578px;
           "><img src=http://dl4.glitter-graphics.net/pub/111/111944aomhvemlia.gif border=0></marquee>
-            <marquee behavior="scroll" direction="down" scrollamount="2" scrolldelay="37" height="563" style="
+      <marquee behavior="scroll" direction="down" scrollamount="2" scrolldelay="37" height="563" style="
             position: absolute;
             left: 14%;
             top: 67px;
             width: 15;
             height: 563px;
           "><img src=http://dl4.glitter-graphics.net/pub/111/111944aomhvemlia.gif border=0></marquee>
-            <marquee behavior="scroll" direction="down" scrollamount="2" scrolldelay="11" height="695" style="
+      <marquee behavior="scroll" direction="down" scrollamount="2" scrolldelay="11" height="695" style="
             position: absolute;
             left: 5%;
             top: 177px;
             width: 15;
             height: 695px;
           "><img src=http://dl4.glitter-graphics.net/pub/111/111944aomhvemlia.gif border=0></marquee>
-            <marquee behavior="scroll" direction="down" scrollamount="1" scrolldelay="39" height="533" style="
+      <marquee behavior="scroll" direction="down" scrollamount="1" scrolldelay="39" height="533" style="
             position: absolute;
             left: 60%;
             top: 127px;
             width: 15;
             height: 533px;
           "><img src=http://dl4.glitter-graphics.net/pub/111/111944aomhvemlia.gif border=0></marquee>
-            <marquee behavior="scroll" direction="down" scrollamount="4" scrolldelay="18" height="618" style="
+      <marquee behavior="scroll" direction="down" scrollamount="4" scrolldelay="18" height="618" style="
             position: absolute;
             left: 13%;
             top: 22px;
             width: 15;
             height: 618px;
           "><img src=http://dl4.glitter-graphics.net/pub/111/111944aomhvemlia.gif border=0></marquee>
-            <marquee behavior="scroll" direction="down" scrollamount="6" scrolldelay="50" height="555" style="
+      <marquee behavior="scroll" direction="down" scrollamount="6" scrolldelay="50" height="555" style="
             position: absolute;
             left: 47%;
             top: 98px;
             width: 15;
             height: 555px;
           "><img src=http://dl4.glitter-graphics.net/pub/111/111944aomhvemlia.gif border=0></marquee>
-            <marquee behavior="scroll" direction="down" scrollamount="1" scrolldelay="13" height="513" style="
+      <marquee behavior="scroll" direction="down" scrollamount="1" scrolldelay="13" height="513" style="
             position: absolute;
             left: 63%;
             top: 193px;
             width: 15;
             height: 513px;
           "><img src=http://dl4.glitter-graphics.net/pub/111/111944aomhvemlia.gif border=0></marquee>
-            <marquee behavior="scroll" direction="down" scrollamount="6" scrolldelay="50" height="558" style="
+      <marquee behavior="scroll" direction="down" scrollamount="6" scrolldelay="50" height="558" style="
             position: absolute;
             left: 37%;
             top: 81px;
             width: 15;
             height: 558px;
           "><img src=http://dl4.glitter-graphics.net/pub/111/111944aomhvemlia.gif border=0></marquee>
-            <marquee behavior="scroll" direction="down" scrollamount="6" scrolldelay="6" height="658" style="
+      <marquee behavior="scroll" direction="down" scrollamount="6" scrolldelay="6" height="658" style="
             position: absolute;
             left: 94%;
             top: 117px;
             width: 15;
             height: 658px;
           "><img src=http://dl4.glitter-graphics.net/pub/111/111944aomhvemlia.gif border=0></marquee>
-            <marquee behavior="scroll" direction="down" scrollamount="3" scrolldelay="10" height="538" style="
+      <marquee behavior="scroll" direction="down" scrollamount="3" scrolldelay="10" height="538" style="
             position: absolute;
             left: 18%;
             top: 91px;
             width: 15;
             height: 538px;
           "><img src=http://dl4.glitter-graphics.net/pub/111/111944aomhvemlia.gif border=0></marquee>
-        </div>
     </div>
+  </div>
 
 
 </body>
 
 </html>
 <script>
-    function abrirConvite() {
-        document.getElementById("sound1").play();
-        document.getElementById("convite-container").style.visibility = "hidden";
-        $(".card").hide();
-        $("#conteudo-container").show("slow");
-        $("#good-button").pulsate()
-    }
-    const thanks = document.querySelector(".thanks-popup");
-    const acceptButton = document.querySelector(".btn-accept");
+  function abrirConvite() {
+    document.getElementById("sound1").play();
+    document.getElementById("convite-container").style.visibility = "hidden";
+    $(".card").hide();
+    $("#conteudo-container").show("slow");
+    $("#good-button").pulsate()
+  }
+  const thanks = document.querySelector(".thanks-popup");
+  const acceptButton = document.querySelector(".btn-accept");
 
 
-    acceptButton.addEventListener('click', () => {
-        thanks.classList.add('animate-popup');
-        setTimeout(() => thanks.classList.remove('animate-popup'), 10000);
-    });
+  acceptButton.addEventListener('click', () => {
+    thanks.classList.add('animate-popup');
+    console.log("ae");
+    setTimeout(() => thanks.classList.remove('animate-popup'), 10000);
+  });
 
 
-
-    acceptButton.addEventListener('touchstart', () => {
-        thanks.classList.add('animate-popup');
-        setTimeout(() => thanks.classList.remove('animate-popup'), 10000);
-    });
+  acceptButton.addEventListener('touchstart', () => {
+    thanks.classList.add('animate-popup');
+    setTimeout(() => thanks.classList.remove('animate-popup'), 10000);
+  });
 </script>
