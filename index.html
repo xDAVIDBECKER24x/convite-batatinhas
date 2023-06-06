@@ -2,323 +2,337 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="shortcut icon" type="image/jpg" href="favicon.ico" />
-  <title>( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)</title>
-  <script defer src="script.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" type="image/jpg" href="favicon.ico" />
+    <title>( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)</title>
+    <script defer src="script.js"></script>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
-  <style>
-    @font-face {
-      font-family: "Angel";
-      src: url("assets/angel.otf") format("otf"), url("assets/angel.ttf") format("truetype");
-    }
-
-    body {
-      margin: 0;
-      width: 100vw;
-      height: 100vh;
-      overflow: hidden;
-      background-color: #fff6d5;
-    }
-
-
-    #evil-button {
-      position: absolute;
-      white-space: nowrap;
-      font-size: 2rem;
-    }
-
-    .convite-container {
-      display: inline;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .button-container {
-      width: 100%;
-      height: 100vh;
-      display: inline;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .text-container {
-      position: relative;
-      height: 400px;
-      color: #333;
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
-    }
-
-    .centered-element {
-      margin: 0;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    .btn {
-      font-size: 30px;
-      margin: 15px;
-      padding: 10px 20px;
-      color: white;
-      border-radius: 10px;
-      border: 0;
-      border-color: transparent;
-      cursor: pointer;
-      transition: background-color 0.5s ease-in-out;
-    }
-
-    .btn-cancel {
-      background-color: rgba(235, 38, 50, 0.6);
-    }
-
-    .btn-cancel:hover {
-      background-color: rgb(235, 38, 50);
-    }
-
-    .btn-accept {
-      background-color: rgba(66, 184, 131, 0.6);
-    }
-
-    .btn-accept:hover {
-      background-color: rgb(66, 184, 131);
-    }
-
-    .come-back-popup,
-    .thanks-popup {
-      position: absolute;
-      padding: 20px 30px;
-      border: 5px solid #333;
-      border-radius: 10px;
-      font-size: 28px;
-      right: -300px;
-    }
-
-    .come-back-popup {
-      top: 10px;
-    }
-
-    .thanks-popup {
-      bottom: 10px;
-    }
-
-    .animate-popup {
-      animation: 10s slide;
-    }
-
-    @keyframes slide {
-      0% {
-        right: -300px;
-      }
-
-      10% {
-        right: 10px;
-      }
-
-      90% {
-        right: 10px;
-      }
-
-      100% {
-        right: -300px;
-      }
-    }
-
-    .blob {
-      box-shadow: 0 0 0 0 rgba(66, 184, 131, 0.6);
-      transform: scale(1);
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0% {
-        transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(66, 184, 131, 0.6);
-      }
-
-      70% {
-        transform: scale(1);
-        box-shadow: 0 0 0 10px rgba(66, 184, 131, 0.6);
-      }
-
-      100% {
-        transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(66, 184, 131, 0.6);
-      }
-    }
-
-    @keyframes jump-shaking {
-      0% {
-        transform: translateX(0)
-      }
-
-      25% {
-        transform: translateY(-5px)
-      }
-
-      35% {
-        transform: translateY(-5px) rotate(8deg)
-      }
-
-      55% {
-        transform: translateY(-5px) rotate(-8deg)
-      }
-
-      65% {
-        transform: translateY(-5px) rotate(8deg)
-      }
-
-      75% {
-        transform: translateY(-5px) rotate(-8deg)
-      }
-
-      100% {
-        transform: translateY(0) rotate(0)
-      }
-    }
-
-    @keyframes tilt-shaking {
-      0% {
-        transform: rotate(0deg);
-      }
-
-      25% {
-        transform: rotate(5deg);
-      }
-
-      50% {
-        transform: rotate(0eg);
-      }
-
-      75% {
-        transform: rotate(-5deg);
-      }
-
-      100% {
-        transform: rotate(0deg);
-      }
-    }
-
-    .constant-tilt-shake {
-      animation: tilt-shaking 2.0s infinite;
-    }
-
-    .rise-shake {
-      animation: jump-shaking 1.83s infinite;
-    }
-
-    .card {
-      width: 0;
-      height: 0;
-      border-top: 100px solid #eee;
-      border-right: 170px solid #ddd;
-      border-bottom: 100px solid #ccc;
-      border-left: 170px solid #ccc;
-    }
-
-    @keyframes heartfade {
-      0% {
-        opacity: 1;
-      }
-
-      50% {
-        opacity: 0;
-      }
-    }
-
-    .heart {
-      z-index: 999;
-      animation: heartfade 6s linear;
-      position: absolute;
-    }
-
-    .heart:before,
-    .heart:after {
-      content: "";
-      background-color: #fc2a62;
-      position: absolute;
-      height: 60px;
-      width: 90px;
-      border-radius: 30px 0px 0px 30px;
-    }
-
-    .heart:before {
-      transform: rotate(45deg);
-    }
-
-    .heart:after {
-      left: 21px;
-      transform: rotate(135deg);
-    }
-
-    .popup-main {
-      position: fixed;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: rgba(255, 255, 255, 0.9);
-      z-index: 11111;
-
-      #popup {
-        position: absolute;
-        margin: 0 auto;
-        top: 50%;
-        left: 0;
-        right: 0;
-        width: 500px;
-        background: #fff;
-        padding: 20px;
-        box-shadow: 0 0 10px 0 #d2d2d2;
-        border-radius: 5px;
-      }
-    }
-
-
-
-    #good-button {}
-  </style>
+    <style>
+        @font-face {
+            font-family: "Angel";
+            src: url("assets/angel.otf") format("otf"), url("assets/angel.ttf") format("truetype");
+        }
+        
+        body {
+            margin: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #fff6d5;
+        }
+        
+        #evil-button {
+            position: absolute;
+            white-space: nowrap;
+            font-size: 2rem;
+        }
+        
+        .convite-container {
+            display: inline;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .button-container {
+            width: 100%;
+            height: 100vh;
+            display: inline;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .text-container {
+            position: relative;
+            height: 400px;
+            color: #333;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        
+        .centered-element {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .btn {
+            font-size: 30px;
+            margin: 15px;
+            padding: 10px 20px;
+            color: white;
+            border-radius: 10px;
+            border: 0;
+            border-color: transparent;
+            cursor: pointer;
+            transition: background-color 0.5s ease-in-out;
+        }
+        
+        .btn-cancel {
+            background-color: rgba(235, 38, 50, 0.6);
+        }
+        
+        .btn-cancel:hover {
+            background-color: rgb(235, 38, 50);
+        }
+        
+        .btn-accept {
+            background-color: rgba(66, 184, 131, 0.6);
+        }
+        
+        .btn-accept:hover {
+            background-color: rgb(66, 184, 131);
+        }
+        
+        .come-back-popup,
+        .thanks-popup {
+            position: absolute;
+            padding: 20px 30px;
+            border: 5px solid #333;
+            border-radius: 10px;
+            font-size: 28px;
+            right: -300px;
+        }
+        
+        .come-back-popup {
+            top: 10px;
+        }
+        
+        .thanks-popup {
+            bottom: 10px;
+        }
+        
+        .animate-popup {
+            animation: 10s slide;
+        }
+        
+        @keyframes slide {
+            0% {
+                right: -300px;
+            }
+            10% {
+                right: 10px;
+            }
+            90% {
+                right: 10px;
+            }
+            100% {
+                right: -300px;
+            }
+        }
+        
+        .blob {
+            box-shadow: 0 0 0 0 rgba(66, 184, 131, 0.6);
+            transform: scale(1);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(66, 184, 131, 0.6);
+            }
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 10px rgba(66, 184, 131, 0.6);
+            }
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(66, 184, 131, 0.6);
+            }
+        }
+        
+        @keyframes jump-shaking {
+            0% {
+                transform: translateX(0)
+            }
+            25% {
+                transform: translateY(-5px)
+            }
+            35% {
+                transform: translateY(-5px) rotate(8deg)
+            }
+            55% {
+                transform: translateY(-5px) rotate(-8deg)
+            }
+            65% {
+                transform: translateY(-5px) rotate(8deg)
+            }
+            75% {
+                transform: translateY(-5px) rotate(-8deg)
+            }
+            100% {
+                transform: translateY(0) rotate(0)
+            }
+        }
+        
+        @keyframes tilt-shaking {
+            0% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(5deg);
+            }
+            50% {
+                transform: rotate(0eg);
+            }
+            75% {
+                transform: rotate(-5deg);
+            }
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+        
+        .constant-tilt-shake {
+            animation: tilt-shaking 2.0s infinite;
+        }
+        
+        .rise-shake {
+            animation: jump-shaking 1.83s infinite;
+        }
+        
+        .card {
+            width: 0;
+            height: 0;
+            border-top: 100px solid #eee;
+            border-right: 170px solid #ddd;
+            border-bottom: 100px solid #ccc;
+            border-left: 170px solid #ccc;
+        }
+        
+        @keyframes heartfade {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+        }
+        
+        .heart {
+            z-index: 999;
+            animation: heartfade 6s linear;
+            position: absolute;
+        }
+        
+        .heart:before,
+        .heart:after {
+            content: "";
+            background-color: #fc2a62;
+            position: absolute;
+            height: 60px;
+            width: 90px;
+            border-radius: 30px 0px 0px 30px;
+        }
+        
+        .heart:before {
+            transform: rotate(45deg);
+        }
+        
+        .heart:after {
+            left: 21px;
+            transform: rotate(135deg);
+        }
+        
+        .popup-main {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.9);
+            z-index: 11111;
+            #popup {
+                position: absolute;
+                margin: 0 auto;
+                top: 50%;
+                left: 0;
+                right: 0;
+                width: 500px;
+                background: #fff;
+                padding: 20px;
+                box-shadow: 0 0 10px 0 #d2d2d2;
+                border-radius: 5px;
+            }
+        }
+        /*Dialog Styles*/
+        
+        dialog {
+            padding: 1rem 3rem;
+            background: white;
+            max-width: 400px;
+            padding-top: 2rem;
+            border-radius: 20px;
+            border: 0;
+            box-shadow: 0 5px 30px 0 rgb(0 0 0 / 10%);
+            animation: fadeIn 1s ease both;
+            &::backdrop {
+                animation: fadeIn 1s ease both;
+                background: rgb(255 255 255 / 40%);
+                z-index: 2;
+                backdrop-filter: blur(20px);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        dialog {
+            width: 500px;
+            height: 500px;
+        }
+        
+        #good-button {}
+    </style>
 </head>
 
 <body>
-  <div class="convite-container">
-    <div class="centered-element">
-      <div class="constant-tilt-shake card">
-        <button class="btn btn-cancel" style="margin-left:-50px;margin-top:-30px" id="convite-container"
-          onclick="abrirConvite()">Abrir</button>
-        <audio id="sound1" src="musica.mp3" preload="auto"></audio>
-      </div>
-    </div>
-  </div>
-  </div>
-  <div id="conteudo-container" hidden class="conteudo">
-    <center>
-      <div id="conteudo-container" class="text-container">
+    <div class="convite-container">
         <div class="centered-element">
-          <img style="height: 300px" src="gatinho.png" />
-          <h1 class="rise-shake">Batatinhas hoje bb ??? <br>
-            <div style="color:rgb(255, 115, 138)">>////&lt </div>
-          </h1>
+            <div class="constant-tilt-shake card">
+                <button class="btn btn-cancel" style="margin-left:-50px;margin-top:-30px" id="convite-container" onclick="abrirConvite()">Abrir</button>
+                <audio id="sound1" src="musica.mp3" preload="auto"></audio>
+            </div>
         </div>
-      </div>
-      <div id="conteudo-container" style="margin-left: -200px">
-        <div class="pulse-button button-container">
-          <button class="blob btn btn-accept" onclick="aceitaConvite()" id="good-button">Sim :)</button>
-        </div>
-        <div class="button-container">
-          <button class="btn btn-cancel" id="evil-button">Não :(</button>
-        </div>
-      </div>
-      <br />
-      <br /><br />
-
-    </center>
-    <!-- <div style="x-index:-999999;">
+    </div>
+    </div>
+    <div id="conteudo-container" hidden class="conteudo">
+        <center>
+            <div id="conteudo-container" class="text-container">
+                <div class="centered-element">
+                    <img style="height: 300px" src="gatinho.png" />
+                    <h1 class="rise-shake">Batatinhas hoje bb ??? <br>
+                        <div style="color:rgb(255, 115, 138)">>////&lt </div>
+                    </h1>
+                </div>
+            </div>
+            <div id="conteudo-container" style="margin-left: -200px">
+                <div class="pulse-button button-container">
+                    <button class="blob btn btn-accept" onclick="window.dialog.showModal();" id="good-button">Sim :)</button>
+                </div>
+                <div class="button-container">
+                    <button class="btn btn-cancel" id="evil-button">Não :(</button>
+                </div>
+            </div>
+            <br />
+            <br /><br />
+            <dialog id="dialog">
+                <img SRC="gato-beijo.gif">
+                <button onclick="window.dialog.close();" aria-label="close" class="x">❌</button>
+            </dialog>
+        </center>
+        <!-- <div style="x-index:-999999;">
       <marquee behavior="scroll" direction="down" scrollamount="4" scrolldelay="6" height="693" style="
             position: absolute;
             left: 73%;
@@ -530,121 +544,124 @@
             height: 538px;
           "><img src=http://dl4.glitter-graphics.net/pub/111/111944aomhvemlia.gif border=0></marquee>
     </div> -->
-  </div>
+    </div>
 
 
 </body>
 
 </html>
 <script>
+    var modal = document.getElementById("dialog");
 
-  function abrirConvite() {
-    document.getElementById("sound1").play();
-    document.getElementById("convite-container").style.visibility = "hidden";
-    $(".card").hide();
-    $("#conteudo-container").show("slow");
-  }
-  const thanks = document.querySelector(".thanks-popup");
-  const acceptButton = document.querySelector(".btn-accept");
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            window.dialog.close();
+        }
+    }
 
 
-  var brd = document.createElement("DIV");
-  document.body.insertBefore(brd, document.getElementById("board"));
-
-  const duration = 3000;
-  const speed = 0.5;
-  const cursorXOffset = 0;
-  const cursorYOffset = -5;
-
-  var hearts = [];
-
-  function generateHeart(x, y, xBound, xStart, scale) {
-    var heart = document.createElement("DIV");
-    heart.setAttribute('class', 'heart');
-    brd.appendChild(heart);
-    heart.time = duration;
-    heart.x = x;
-    heart.y = y;
-    heart.bound = xBound;
-    heart.direction = xStart;
-    heart.style.left = heart.x + "px";
-    heart.style.top = heart.y + "px";
-    heart.scale = scale;
-    heart.style.transform = "scale(" + scale + "," + scale + ")";
-    if (hearts == null)
-      hearts = [];
-    hearts.push(heart);
-    return heart;
-  }
+    function abrirConvite() {
+        document.getElementById("sound1").play();
+        document.getElementById("convite-container").style.visibility = "hidden";
+        $(".card").hide();
+        $("#conteudo-container").show("slow");
+    }
+    const thanks = document.querySelector(".thanks-popup");
+    const acceptButton = document.querySelector(".btn-accept");
 
 
+    var brd = document.createElement("DIV");
+    document.body.insertBefore(brd, document.getElementById("board"));
 
+    const duration = 3000;
+    const speed = 0.5;
+    const cursorXOffset = 0;
+    const cursorYOffset = -5;
 
-  var down = false;
-  var event = null;
+    var hearts = [];
 
-  document.onmousedown = function (e) {
-    down = true;
-    event = e;
-  }
-
-  document.onmouseup = function (e) {
-    down = false;
-  }
-
-  document.onmousemove = function (e) {
-    event = e;
-  }
-
-  document.ontouchstart = function (e) {
-    down = true;
-    event = e.touches[0];
-  }
-
-  document.ontouchend = function (e) {
-    down = false;
-  }
-
-  document.ontouchmove = function (e) {
-    event = e.touches[0];
-  }
-
-  var before = Date.now();
-  var id = setInterval(frame, 5);
-  var gr = setInterval(check, 100);
-
-  function frame() {
-    var current = Date.now();
-    var deltaTime = current - before;
-    before = current;
-    for (i in hearts) {
-      var heart = hearts[i];
-      heart.time -= deltaTime;
-      if (heart.time > 0) {
-        heart.y -= speed;
+    function generateHeart(x, y, xBound, xStart, scale) {
+        var heart = document.createElement("DIV");
+        heart.setAttribute('class', 'heart');
+        brd.appendChild(heart);
+        heart.time = duration;
+        heart.x = x;
+        heart.y = y;
+        heart.bound = xBound;
+        heart.direction = xStart;
+        heart.style.left = heart.x + "px";
         heart.style.top = heart.y + "px";
-        heart.style.left = heart.x + heart.direction * heart.bound * Math.sin(heart.y * heart.scale / 30) / heart.y * 100 + "px";
-      }
-      else {
-        heart.parentNode.removeChild(heart);
-        hearts.splice(i, 1);
-      }
+        heart.scale = scale;
+        heart.style.transform = "scale(" + scale + "," + scale + ")";
+        if (hearts == null)
+            hearts = [];
+        hearts.push(heart);
+        return heart;
     }
-  }
 
-  function check() {
-    if (down) {
-      var start = 1 - Math.round(Math.random()) * 2;
-      var scale = Math.random() * Math.random() * 0.8 + 0.2;
-      var bound = 30 + Math.random() * 20;
-      generateHeart(event.pageX - brd.offsetLeft + cursorXOffset, event.pageY - brd.offsetTop + cursorYOffset, bound, start, scale);
+
+
+
+    var down = false;
+    var event = null;
+
+    document.onmousedown = function(e) {
+        down = true;
+        event = e;
     }
-  }
 
+    document.onmouseup = function(e) {
+        down = false;
+    }
 
+    document.onmousemove = function(e) {
+        event = e;
+    }
+
+    document.ontouchstart = function(e) {
+        down = true;
+        event = e.touches[0];
+    }
+
+    document.ontouchend = function(e) {
+        down = false;
+    }
+
+    document.ontouchmove = function(e) {
+        event = e.touches[0];
+    }
+
+    var before = Date.now();
+    var id = setInterval(frame, 5);
+    var gr = setInterval(check, 100);
+
+    function frame() {
+        var current = Date.now();
+        var deltaTime = current - before;
+        before = current;
+        for (i in hearts) {
+            var heart = hearts[i];
+            heart.time -= deltaTime;
+            if (heart.time > 0) {
+                heart.y -= speed;
+                heart.style.top = heart.y + "px";
+                heart.style.left = heart.x + heart.direction * heart.bound * Math.sin(heart.y * heart.scale / 30) / heart.y * 100 + "px";
+            } else {
+                heart.parentNode.removeChild(heart);
+                hearts.splice(i, 1);
+            }
+        }
+    }
+
+    function check() {
+        if (down) {
+            var start = 1 - Math.round(Math.random()) * 2;
+            var scale = Math.random() * Math.random() * 0.8 + 0.2;
+            var bound = 30 + Math.random() * 20;
+            generateHeart(event.pageX - brd.offsetLeft + cursorXOffset, event.pageY - brd.offsetTop + cursorYOffset, bound, start, scale);
+        }
+    }
 </script>
 
 <script>
-
-
 </script>
