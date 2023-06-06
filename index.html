@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="shortcut icon" type="image/jpg" href="favicon.ico"/>
+  <link rel="shortcut icon" type="image/jpg" href="favicon.ico" />
   <title>( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)</title>
   <script defer src="script.js"></script>
 
@@ -25,10 +25,6 @@
       background-color: #fff6d5;
     }
 
-    #good-button {
-     
-  
-    }
 
     #evil-button {
       position: absolute;
@@ -224,6 +220,68 @@
       border-bottom: 100px solid #ccc;
       border-left: 170px solid #ccc;
     }
+
+    @keyframes heartfade {
+      0% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+      }
+    }
+
+    .heart {
+      z-index: 999;
+      animation: heartfade 6s linear;
+      position: absolute;
+    }
+
+    .heart:before,
+    .heart:after {
+      content: "";
+      background-color: #fc2a62;
+      position: absolute;
+      height: 60px;
+      width: 90px;
+      border-radius: 30px 0px 0px 30px;
+    }
+
+    .heart:before {
+      transform: rotate(45deg);
+    }
+
+    .heart:after {
+      left: 21px;
+      transform: rotate(135deg);
+    }
+
+    .popup-main {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.9);
+      z-index: 11111;
+
+      #popup {
+        position: absolute;
+        margin: 0 auto;
+        top: 50%;
+        left: 0;
+        right: 0;
+        width: 500px;
+        background: #fff;
+        padding: 20px;
+        box-shadow: 0 0 10px 0 #d2d2d2;
+        border-radius: 5px;
+      }
+    }
+
+
+
+    #good-button {}
   </style>
 </head>
 
@@ -250,7 +308,7 @@
       </div>
       <div id="conteudo-container" style="margin-left: -200px">
         <div class="pulse-button button-container">
-          <button class="blob btn btn-accept" id="good-button">Sim :)</button>
+          <button class="blob btn btn-accept" onclick="aceitaConvite()" id="good-button">Sim :)</button>
         </div>
         <div class="button-container">
           <button class="btn btn-cancel" id="evil-button">Não :(</button>
@@ -260,7 +318,7 @@
       <br /><br />
 
     </center>
-    <div style=" z-index:-999999;">
+    <!-- <div style="x-index:-999999;">
       <marquee behavior="scroll" direction="down" scrollamount="4" scrolldelay="6" height="693" style="
             position: absolute;
             left: 73%;
@@ -471,7 +529,7 @@
             width: 15;
             height: 538px;
           "><img src=http://dl4.glitter-graphics.net/pub/111/111944aomhvemlia.gif border=0></marquee>
-    </div>
+    </div> -->
   </div>
 
 
@@ -479,6 +537,7 @@
 
 </html>
 <script>
+
   function abrirConvite() {
     document.getElementById("sound1").play();
     document.getElementById("convite-container").style.visibility = "hidden";
@@ -489,15 +548,103 @@
   const acceptButton = document.querySelector(".btn-accept");
 
 
-  acceptButton.addEventListener('click', () => {
-    thanks.classList.add('animate-popup');
-    console.log("ae");
-    setTimeout(() => thanks.classList.remove('animate-popup'), 10000);
-  });
+  var brd = document.createElement("DIV");
+  document.body.insertBefore(brd, document.getElementById("board"));
+
+  const duration = 3000;
+  const speed = 0.5;
+  const cursorXOffset = 0;
+  const cursorYOffset = -5;
+
+  var hearts = [];
+
+  function generateHeart(x, y, xBound, xStart, scale) {
+    var heart = document.createElement("DIV");
+    heart.setAttribute('class', 'heart');
+    brd.appendChild(heart);
+    heart.time = duration;
+    heart.x = x;
+    heart.y = y;
+    heart.bound = xBound;
+    heart.direction = xStart;
+    heart.style.left = heart.x + "px";
+    heart.style.top = heart.y + "px";
+    heart.scale = scale;
+    heart.style.transform = "scale(" + scale + "," + scale + ")";
+    if (hearts == null)
+      hearts = [];
+    hearts.push(heart);
+    return heart;
+  }
 
 
-  acceptButton.addEventListener('touchstart', () => {
-    thanks.classList.add('animate-popup');
-    setTimeout(() => thanks.classList.remove('animate-popup'), 10000);
-  });
+
+
+  var down = false;
+  var event = null;
+
+  document.onmousedown = function (e) {
+    down = true;
+    event = e;
+  }
+
+  document.onmouseup = function (e) {
+    down = false;
+  }
+
+  document.onmousemove = function (e) {
+    event = e;
+  }
+
+  document.ontouchstart = function (e) {
+    down = true;
+    event = e.touches[0];
+  }
+
+  document.ontouchend = function (e) {
+    down = false;
+  }
+
+  document.ontouchmove = function (e) {
+    event = e.touches[0];
+  }
+
+  var before = Date.now();
+  var id = setInterval(frame, 5);
+  var gr = setInterval(check, 100);
+
+  function frame() {
+    var current = Date.now();
+    var deltaTime = current - before;
+    before = current;
+    for (i in hearts) {
+      var heart = hearts[i];
+      heart.time -= deltaTime;
+      if (heart.time > 0) {
+        heart.y -= speed;
+        heart.style.top = heart.y + "px";
+        heart.style.left = heart.x + heart.direction * heart.bound * Math.sin(heart.y * heart.scale / 30) / heart.y * 100 + "px";
+      }
+      else {
+        heart.parentNode.removeChild(heart);
+        hearts.splice(i, 1);
+      }
+    }
+  }
+
+  function check() {
+    if (down) {
+      var start = 1 - Math.round(Math.random()) * 2;
+      var scale = Math.random() * Math.random() * 0.8 + 0.2;
+      var bound = 30 + Math.random() * 20;
+      generateHeart(event.pageX - brd.offsetLeft + cursorXOffset, event.pageY - brd.offsetTop + cursorYOffset, bound, start, scale);
+    }
+  }
+
+
+</script>
+
+<script>
+
+
 </script>
