@@ -12,7 +12,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
 
+
+
 <body>
+
     <div class="convite-container">
         <div class="centered-element">
             <div class="constant-tilt-shake card">
@@ -23,12 +26,13 @@
     </div>
     </div>
     <div id="conteudo-container" hidden class="conteudo">
+
         <center>
             <div id="conteudo-container" class="text-container">
                 <div class="centered-element">
                     <img style="height: 300px" src="gatinho.png" />
-                    <h1 class="rise-shake">Batatinhas hoje bb ??? <br>
-                        <div style="color:rgb(255, 115, 138)">>////&lt </div>
+                    <h1 class="rise-shake">
+                        <!-- Message go here -->
                     </h1>
                 </div>
             </div>
@@ -57,7 +61,21 @@
 </body>
 
 </html>
+
 <script>
+    //Add message via get or set default 
+    let searchParams = new URLSearchParams(window.location.search);
+    if (searchParams.has('msg')) {
+        let msg = searchParams.get('msg');
+        $('<span>' + msg + '</span>').appendTo(".rise-shake");
+    } else {
+        $('<span>Batatinhas hj bb??</span>').appendTo(".rise-shake");
+    }
+
+    $('<div style="color:rgb(255, 115, 138)">>////&lt </div>').appendTo(".rise-shake");
+
+
+
     var modal = document.getElementById("dialog");
 
     window.onclick = function(event) {
